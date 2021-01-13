@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Dec 25 18:16:17 IST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-016f-3d17-f185-0000055a5aa0 
+on database directory E:\my-starter-project\CAR ShowRoom Complete Project\Car_ShowRoom\dist\Ranvijay with class loader sun.misc.Launcher$AppClassLoader@7852e922 
+Loaded from file:/E:/my-starter-project/CAR%20ShowRoom%20Complete%20Project/Car_ShowRoom/dist/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_231-b11
+user.dir=E:\my-starter-project\CAR ShowRoom Complete Project\Car_ShowRoom\dist
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

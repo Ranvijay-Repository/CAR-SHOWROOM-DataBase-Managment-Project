@@ -1,0 +1,112 @@
+  public ArrayList<user> UserList()
+    {
+        ArrayList<user>UsersList=new ArrayList<>();
+        try
+    {
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Ranvijay", "maindata","1234");
+     
+      
+      String query1="SELECT * FROM 'EMPDETAILS' ";
+      Statement st=con.createStatement();
+      ResultSet rs=st.executeQuery(query1);
+      user User;
+      while(rs.next())
+      {
+ User=new user(rs.getString("SEID"),rs.getString("SNAME"),rs.getString("SSEX"),rs.getString("SPHN"),rs.getString("SADR"),rs.getString("SIDPT"),rs.getString("SIDNO"),rs.getString("SSAL"));
+ UsersList.add(User);
+      }
+      
+      
+    }
+        catch(Exception e1)
+    {
+        e1.printStackTrace();
+    }
+       return UsersList; 
+        
+    }
+    
+    public void Show_User() {
+      ArrayList<user> list= UserList();  
+      try
+    {
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Ranvijay", "maindata","1234");
+    }
+       catch(Exception e1)
+    {
+        e1.printStackTrace();
+    }
+       
+      DefaultTableModel model=(DefaultTableModel)Empdetail_display.getModel();
+      Object[] row=new Object[8];
+              for(int i=0;i<list.size();i++)
+              {
+                row[0]=list.get(i).getSSID();
+                row[1]=list.get(i).getSNAME();
+                row[2]=list.get(i).getSSEX();
+                row[3]=list.get(i).getSPHN();
+                row[4]=list.get(i).getSADR();
+                row[5]=list.get(i).getSIDPT();
+                row[6]=list.get(i).getSIDNO();
+                row[7]=list.get(i).getSSAL();
+             model.addRow(row);
+         
+              }
+    }
+
+
+
+
+
+
+
+
+
+class user {
+    private String SSID,SNAME,SSEX,SPHN,SADR,SIDPT,SIDNO,SSAL;
+    
+    public user(String SSID,String SNAME,String SSEX,String SPHN,String SADR,String SIDPT,String SIDNO,String SSAL)
+    {
+        this.SSID=SSID;
+        this.SNAME=SNAME;
+        this.SSEX=SSEX;
+        this.SPHN=SPHN;
+        this.SADR=SADR;
+        this.SIDPT=SIDPT;
+        this.SIDNO=SIDNO;
+        this.SSAL=SSAL;
+        
+    }
+    public String getSSID()
+    {
+        return SSID;
+    }
+    public String getSNAME()
+    {
+        return SNAME;
+    }
+    public String getSSEX()
+    {
+        return SSEX;
+    }
+    public String getSPHN()
+    {
+        return SPHN;
+    }
+    public String getSADR()
+    {
+        return SADR;
+    }
+    public String getSIDPT()
+    {
+        return SIDPT;
+    }
+    public String getSIDNO()
+    {
+        return SIDNO;
+    }
+    public String getSSAL()
+    {
+        return SSAL;
+    } 
+}
